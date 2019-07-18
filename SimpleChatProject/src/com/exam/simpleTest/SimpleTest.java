@@ -18,6 +18,7 @@ public class SimpleTest {
 =======
 		System.out.println(123);
 >>>>>>> branch 'master' of https://github.com/SeokWooJeong/SimpleChatProject.git
+	System.out.println("«œ¡§»∆");
 	}
 
 }
