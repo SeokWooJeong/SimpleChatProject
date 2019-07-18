@@ -20,6 +20,7 @@ public class SimpleTest {
 		System.out.println("test ");
 		System.out.println("test ");
 		System.out.println("test ");
+		System.out.println("test ");
 		System.out.println("최은우 UTF-8 인코딩 완료");
 	}
 
