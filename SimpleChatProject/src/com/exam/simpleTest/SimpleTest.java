@@ -13,6 +13,7 @@ public class SimpleTest {
 		System.out.println("Hello world sin gi han, coo, seok woo");
 		System.out.println("Hello world sin gi han, coo, seok woo");
 >>>>>>> branch 'master' of https://github.com/SeokWooJeong/SimpleChatProject.git
+		System.out.println(456);
 	}
 
 }
