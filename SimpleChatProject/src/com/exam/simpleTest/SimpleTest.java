@@ -18,8 +18,13 @@ public class SimpleTest {
 		System.out.println(123);
 		System.out.println("정석우 UTF-8 인코딩 완료");
 		System.out.println("test ");
+		System.out.println("test ");
+
 		System.out.println("최은우 UTF-8 인코딩 완료");
-		ystem.out.println("최은우 UTF-8 인코딩 완료");
+	
+		System.out.println("test ");
+		System.out.println("test ");
+		System.out.println("최은우 UTF-8 인코딩 완료");
 	}
 
 }
