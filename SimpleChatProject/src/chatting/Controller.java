@@ -11,32 +11,6 @@ public class Controller {
 	public Controller() {
 		m = new Model();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	public void openChat() {
-		chat = new View_Chatting();
-		chat.setController(Controller.this);
-		chat.setVisible(true);
-	}
-	
-	public void openLogin() {
-		EventQueue.invokeLater(()-> {
-			try {
-				login = new View_Login();
-				login.setController(Controller.this);
-				login.setVisible(true);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}			
-		});
-	}
-	
 	public void setNickname(String name) {
 		m.setNickName(name);
 	}
@@ -60,4 +34,41 @@ public class Controller {
 	public String getIpadress () {
 		return m.getIpAdress();
 	}
+	
+	public void openChat() {
+		EventQueue.invokeLater(()-> {
+			try {
+				chat = new View_Chatting();
+				chat.setController(Controller.this);
+				chat.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}			
+		});
+	}
+	
+	public void openLogin() {
+		EventQueue.invokeLater(()-> {
+			try {
+				login = new View_Login();
+				login.setController(Controller.this);
+				login.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}			
+		});
+	}
+		
+	
+	public String getLog() {
+		String log = new String();
+		// 서버로부터 화면에 띄울 채팅 내용을 받아오면 return 해주는 곳
+		
+		return log;
+	}
+	
+	public void sendLog(String log) {
+		// 내가 전송할 문자열을 서버로 보낼 그런 함수 넣는 곳
+	}
+	
 }

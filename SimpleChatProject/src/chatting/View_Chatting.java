@@ -31,6 +31,7 @@ public class View_Chatting extends JFrame implements ActionListener{
 	private JButton sendButton;
 	
 	private StringBuilder sb; 
+	private JScrollPane scrollPane;
 	private JTextArea chatArea;
 	
 	
@@ -76,13 +77,12 @@ public class View_Chatting extends JFrame implements ActionListener{
 		
 		Component verticalStrut_1 = Box.createVerticalStrut(20);
 		panel_1.add(verticalStrut_1, BorderLayout.SOUTH);
-
+		
+		scrollPane = new JScrollPane();
+		panel_1.add(scrollPane, BorderLayout.CENTER);
 		
 		chatArea = new JTextArea();
-		panel_1.add(chatArea, BorderLayout.CENTER);
-		chatArea.setLineWrap(true);
-		chatArea.setWrapStyleWord(true);
-		chatArea.setEditable(false);
+		scrollPane.setViewportView(chatArea);
 		
 		
 	}
@@ -97,13 +97,45 @@ public class View_Chatting extends JFrame implements ActionListener{
 			sb.append(c.getNickname());
 			sb.append(" - ");
 			sb.append(myChatField.getText());
-			sb.append("\n");
-			chatArea.setText(sb.toString());
-			myChatField.setText("");
+			sb.append("\n");			
+
+			// 지울 코드
+			update();
+			
+			// 살릴 코드
+			// c.sendLog(sb.toString());
+			
+			sb.setLength(0);
+			myChatField.setText("");			
 			myChatField.requestFocus();
 		}
 	}	
 	
-	
+	public void update() {
+		
+		// 지울 코드
+		chatArea.append(sb.toString());		
+
+		// 살릴 코드
+		// chatArea.setText(c.getLog());		
+
+		chatArea.setCaretPosition(chatArea.getDocument().getLength());
+		
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
