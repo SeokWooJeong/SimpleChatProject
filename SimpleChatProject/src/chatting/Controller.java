@@ -69,6 +69,7 @@ public class Controller {
 	
 	public void sendLog(String log) {
 		// 내가 전송할 문자열을 서버로 보낼 그런 함수 넣는 곳
+		
 	}
 	
 }

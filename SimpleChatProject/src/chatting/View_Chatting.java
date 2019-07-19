@@ -62,6 +62,7 @@ public class View_Chatting extends JFrame implements ActionListener{
 		
 		panel.add(myChatField, BorderLayout.CENTER);
 		myChatField.setColumns(10);
+		
 		myChatField.registerKeyboardAction(this, "send", KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),JComponent.WHEN_FOCUSED);
 		
 		sendButton = new JButton("전송");
@@ -82,6 +83,7 @@ public class View_Chatting extends JFrame implements ActionListener{
 		panel_1.add(scrollPane, BorderLayout.CENTER);
 		
 		chatArea = new JTextArea();
+		chatArea.setEditable(false);
 		scrollPane.setViewportView(chatArea);
 		
 		
