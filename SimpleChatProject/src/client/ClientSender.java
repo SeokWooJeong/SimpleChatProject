@@ -32,10 +32,11 @@ class ClientSender extends Thread {
       Scanner scanner = new Scanner(System.in);
       try {
          if(out!=null) {
-            out.writeUTF(name);
+            out.writeUTF(name + " 님이 접속하셨습니다.");
          }
          while(out!=null) {
-            out.writeUTF("["+name+"]"+scanner.nextLine());
+            //out.writeUTF("["+name+"]"+scanner.nextLine());
+        	 out.writeUTF(scanner.nextLine());
          }
       }catch(IOException e) {
          e.printStackTrace();
