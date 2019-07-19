@@ -12,16 +12,17 @@ public class Controller {
 		m = new Model();
 	}
 	
+	
+	
+	
+	
+	
+	
+	
 	public void openChat() {
-		EventQueue.invokeLater( ()-> {			
-			try {
-				chat = new View_Chatting();
-				chat.setController(Controller.this);
-				chat.setVisible(true);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		});
+		chat = new View_Chatting();
+		chat.setController(Controller.this);
+		chat.setVisible(true);
 	}
 	
 	public void openLogin() {
