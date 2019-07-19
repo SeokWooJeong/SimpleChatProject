@@ -21,6 +21,7 @@ import javax.swing.KeyStroke;
 import javax.swing.JTextArea;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.JScrollPane;
 
 public class View_Chatting extends JFrame implements ActionListener{
 
@@ -69,16 +70,9 @@ public class View_Chatting extends JFrame implements ActionListener{
 		Box verticalBox = Box.createVerticalBox();
 		panel.add(verticalBox, BorderLayout.SOUTH);
 		
-		
-		
-		
-		
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.CENTER);
 		panel_1.setLayout(new BorderLayout(0, 0));
-		
-		
-		
 		
 		Component verticalStrut_1 = Box.createVerticalStrut(20);
 		panel_1.add(verticalStrut_1, BorderLayout.SOUTH);
@@ -109,5 +103,7 @@ public class View_Chatting extends JFrame implements ActionListener{
 			myChatField.requestFocus();
 		}
 	}	
+	
+	
 
 }
