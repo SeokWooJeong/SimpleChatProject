@@ -1,3 +1,5 @@
+package client;
+
 import java.net.ConnectException;
 import java.net.Socket;
 
