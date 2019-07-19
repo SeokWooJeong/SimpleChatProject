@@ -30,7 +30,9 @@ class ChattingClient {
       if (args.length != 1) {
          System.out.println("대화명을 입력하세요");
          System.out.println("ex)java Main aaa");
+         System.out.println("ex)java Main aaa");
          System.exit(0);
+         
       }else {
          name = args[0];
       }
