@@ -15,7 +15,7 @@ class ChattingClient {
 		nameCheck(args);
 
 		try {
-			socket = new Socket(ip, 3000);
+			socket = new Socket(ip, 3100);
 			System.out.println("Server Connect!");
 			Thread sender = new Thread(new ClientSender(socket, name));
 			Thread receiver = new Thread(new ClientReceiver(socket));

@@ -3,6 +3,7 @@ package client;
 import java.io.DataInputStream;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
+import java.util.LinkedList;
 
 class ClientReceiver extends Thread {
 	Socket socket;
@@ -20,14 +21,19 @@ class ClientReceiver extends Thread {
 
 	public void run() {
 
-		byte[] by = new byte[100];
+		byte[] by = new byte[0];
 		int i = 0;
+		boolean isFirstTime = true;
 		while (in != null) {
 
 			try {
 				while (in.available() > 0) {
+					if(isFirstTime) {
+						by= new byte[in.available()];
+						isFirstTime=false;
+					}
+					
 					by[i++] = in.readByte();
-					// System.out.println(c.toString());
 				}
 				if(i>0){
 					str = new String(by, StandardCharsets.UTF_8);
@@ -38,6 +44,7 @@ class ClientReceiver extends Thread {
 				// e.printStackTrace();
 			} finally {
 				i = 0;
+				isFirstTime=true;
 			}
 		}
 	}
