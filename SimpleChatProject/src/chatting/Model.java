@@ -12,6 +12,7 @@ public class Model {
 
 	public void setNickName(String nickName) {
 		NickName = nickName;
+		System.out.println("3이름 = "+nickName);
 	}
 
 	

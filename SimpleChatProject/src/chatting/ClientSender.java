@@ -70,12 +70,13 @@ class ClientSender {
 	ClientSender(Socket socket, String name) {
 		this.socket = socket;
 		this.name = name;
+		System.out.println("이름 = "+ name);
 		try {
 			outputStream = socket.getOutputStream();
 			out = new DataOutputStream(outputStream);
 			ip = socket.getInetAddress();
 			port = socket.getPort();
-			out.writeUTF(name + " 님이 접속하셨습니다.");
+			out.writeUTF(name + " 님이 접속하셨습니다.\n");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
