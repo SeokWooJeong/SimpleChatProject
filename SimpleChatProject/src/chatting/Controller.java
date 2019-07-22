@@ -14,7 +14,6 @@ public class Controller {
 	}
 
 	public void setNickname(String name) {
-		System.out.println("2이름 = "+name);
 		m.setNickName(name);
 	}
 
