@@ -100,10 +100,10 @@ public class View_Chatting extends JFrame implements ActionListener {
 			sb.append("\n");
 
 			// 지울 코드
-			update();
+//			update();
 
 			// 살릴 코드
-			// c.sendLog(sb.toString());
+			 c.sendLog(sb.toString());
 
 			sb.setLength(0);
 			myChatField.setText("");
@@ -111,13 +111,13 @@ public class View_Chatting extends JFrame implements ActionListener {
 		}
 	}
 
-	public void update() {
+	public void update(String log) {
 
 		// 지울 코드
-		chatArea.append(sb.toString());
+//		chatArea.append(sb.toString());
 
 		// 살릴 코드
-		// chatArea.setText(c.getLog());
+		 chatArea.append(log);
 
 		chatArea.setCaretPosition(chatArea.getDocument().getLength());
 

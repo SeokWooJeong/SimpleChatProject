@@ -7,7 +7,8 @@ public class Controller {
 	View_Chatting chat;
 	View_Login login;
 	Model m;
-
+	ChattingClient chattingclient;
+	
 	public Controller() {
 		m = new Model();
 	}
@@ -24,7 +25,7 @@ public class Controller {
 		m.setNickName(ip);
 	}
 
-	public String getPort() {
+	public int getPort() {
 		return m.getPort();
 	}
 
@@ -46,6 +47,12 @@ public class Controller {
 				e.printStackTrace();
 			}
 		});
+		chattingclient=new ChattingClient(
+				m.getNickName(),
+				m.getIpAdress(),
+				m.getPort(),
+				this
+				);
 	}
 
 	public void openLogin() {
@@ -69,7 +76,9 @@ public class Controller {
 
 	public void sendLog(String log) {
 		// 내가 전송할 문자열을 서버로 보낼 그런 함수 넣는 곳
-
+		chattingclient.sendLog(log);
 	}
-
+	public void getLog(String log) {
+		chat.update(log);
+	}
 }

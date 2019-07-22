@@ -3,8 +3,8 @@ package chatting;
 public class Model {
 
 	private String NickName;
-	private String port;
-	private String IpAdress;
+	private int port = 3100;
+	private String IpAdress = "218.39.221.86";
 
 	public String getNickName() {
 		return NickName;
@@ -14,11 +14,13 @@ public class Model {
 		NickName = nickName;
 	}
 
-	public String getPort() {
+	
+
+	public int getPort() {
 		return port;
 	}
 
-	public void setPort(String port) {
+	public void setPort(int port) {
 		this.port = port;
 	}
 
