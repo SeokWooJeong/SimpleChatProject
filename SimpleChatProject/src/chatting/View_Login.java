@@ -94,7 +94,6 @@ public class View_Login extends JFrame implements ActionListener {
 		if (e.getSource() == enterButton || e.getActionCommand() == "enter") {
 			c.setNickname(nickNameField.getText());
 			c.openChat();
-			System.out.println("1이름 = "+nickNameField.getText());
 			
 			this.setVisible(false);
 		}
