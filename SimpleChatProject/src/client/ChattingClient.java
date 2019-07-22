@@ -10,7 +10,7 @@ class ChattingClient {
 	String name = "";
 	Socket socket;
 
-	public ChattingClient(String[] args) {
+	public ChattingClient(String args) {
 
 		nameCheck(args);
 
@@ -29,13 +29,13 @@ class ChattingClient {
 		}
 	}
 
-	public void nameCheck(String[] args) {
-		if (args.length != 1) {
+	public void nameCheck(String args) {
+		if (args == "") {
 			System.out.println("대화명을 입력하세요");
 			System.out.println("ex)java Main aaa");
 			System.exit(0);
 		} else {
-			name = args[0];
+			name = args;
 		}
 	}
 }
