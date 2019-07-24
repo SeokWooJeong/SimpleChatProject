@@ -8,19 +8,28 @@ class ChattingClient {
 
 	String name = "";
 	int socket;
+	Controller controller;
+	
 	ClientSender clientSender;
 	ClientReceiver clientReceiver;
-	Controller controller;
+	
+	
 	public ChattingClient(String name, String ip, int socket, Controller controller) {
 		
-	
+		//수정해야함
+		nameCheck(name);
+		
+		
 		this.ip = ip;
 		this.socket = socket;
 		this.controller = controller;
 		try {
 			Socket s = new Socket(this.ip, this.socket);
 			System.out.println("Server Connect!");
+			
 			clientSender = new ClientSender(s, name);
+			
+			
 			clientReceiver = new ClientReceiver(s, this);
 			Thread receiver = new Thread(clientReceiver);
 
@@ -32,7 +41,16 @@ class ChattingClient {
 		}
 	}
 
-
+	public void nameCheck(String name) {
+		if (name == "") {
+			System.out.println("대화명을 입력하세요");
+			System.out.println("ex)java Main aaa");
+			System.exit(0);
+		} else {
+			this.name = name;
+		}
+	}
+	
 	public void sendLog(String log) {
 		clientSender.run(log);
 	}
