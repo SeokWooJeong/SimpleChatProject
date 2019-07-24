@@ -38,6 +38,7 @@ class MyLinkedList {
 		if (tail.prev == null)
 			head = newNode;
 	}
+
 	public void add(int data) {
 		addLast(data);
 	}
@@ -50,11 +51,16 @@ class MyLinkedList {
 	}
 
 	public void remove(int index) {
-		Node temp = node(index - 1);
-		if (temp.next == tail)
-			tail = temp;
-		temp.next.prev = temp;
-		size--;
+		if (index == 0)
+			removeFrist();
+		else {
+			Node temp = node(index - 1);
+
+			if (temp.next == tail)
+				tail = temp;
+			temp.next.prev = temp;
+			size--;
+		}
 	}
 
 	public void remove() {
@@ -71,7 +77,7 @@ class MyLinkedList {
 
 	Node node(int index) {
 		if (index > size - 1) {
-			System.out.println("에러"); 
+			System.out.println("에러");
 			throw new NullPointerException();
 		} else if (index < size / 2) {
 			Node x = head;
@@ -84,14 +90,16 @@ class MyLinkedList {
 				x = x.prev;
 			return x;
 		}
-		
+
 	}
 
 	public void printAll() {
+		System.out.print("[");
 		for (int i = 0; i < size; ++i) {
 			System.out.print(node(i).data + " ");
 		}
-		System.out.println();
+		System.out.println("]");
+
 	}
 
 }
@@ -102,8 +110,13 @@ public class TestMain {
 		MyLinkedList list = new MyLinkedList();
 		list.addFirst(3);
 		list.add(55);
+		list.add(66);
+		list.add(77);
+		list.add(88);
+		list.addLast(1111);
+
 		list.printAll();
-		list.remove();
+		list.remove(0);
 		list.printAll();
 
 	}
