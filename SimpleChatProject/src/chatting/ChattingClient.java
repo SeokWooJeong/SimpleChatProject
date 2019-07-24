@@ -8,20 +8,28 @@ class ChattingClient {
 
 	String name = "";
 	int socket;
+	Controller controller;
+	
 	ClientSender clientSender;
 	ClientReceiver clientReceiver;
-	Controller controller;
+	
+	
 	public ChattingClient(String name, String ip, int socket, Controller controller) {
 		
+		//수정해야함
 		nameCheck(name);
+		
+		
 		this.ip = ip;
 		this.socket = socket;
 		this.controller = controller;
-		System.out.println("4이름 = "+this.name);
 		try {
 			Socket s = new Socket(this.ip, this.socket);
 			System.out.println("Server Connect!");
+			
 			clientSender = new ClientSender(s, name);
+			
+			
 			clientReceiver = new ClientReceiver(s, this);
 			Thread receiver = new Thread(clientReceiver);
 

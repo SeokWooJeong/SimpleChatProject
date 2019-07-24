@@ -11,6 +11,7 @@ public class Controller {
 	
 	public Controller() {
 		m = new Model();
+		openLogin();
 	}
 
 	public void setNickname(String name) {

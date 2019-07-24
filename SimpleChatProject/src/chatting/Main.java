@@ -1,14 +1,11 @@
 package chatting;
 
-import java.awt.EventQueue;
-
 public class Main {
-	private static Controller c;
+	private static Controller controller;
 
 	public static void main(String[] args) {
 
-		c = new Controller();
-		c.openLogin();
+		controller = new Controller();
 
 	}
 
