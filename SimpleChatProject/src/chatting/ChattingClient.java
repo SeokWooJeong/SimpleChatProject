@@ -23,7 +23,6 @@ class ChattingClient {
 		this.ip = ip;
 		this.socket = socket;
 		this.controller = controller;
-		System.out.println("4이름 = "+this.name);
 		try {
 			Socket s = new Socket(this.ip, this.socket);
 			System.out.println("Server Connect!");

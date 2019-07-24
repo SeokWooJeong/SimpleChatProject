@@ -39,7 +39,6 @@ class ClientReceiver extends Thread {
 				}
 				if(i>0){
 					str = new String(by, StandardCharsets.UTF_8);
-//					System.out.println(str);
 					chattingClient.getLog(str);
 				}
 				// 227 133 129
