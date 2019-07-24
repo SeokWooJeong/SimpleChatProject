@@ -47,20 +47,26 @@ class MyLinkedList {
 		head = head.next;
 		if (head != null)
 			head.prev = null;
-		size--;
+		// size--;
+	}
+
+	public void removeLast() {
+		tail = tail.prev;
+		tail.next = null;
+		// size--;
 	}
 
 	public void remove(int index) {
 		if (index == 0)
 			removeFrist();
-		else {
-			Node temp = node(index - 1);
+		if (index == size)
+			removeLast();
 
-			if (temp.next == tail)
-				tail = temp;
-			temp.next.prev = temp;
-			size--;
-		}
+		Node temp = node(index - 1);
+		temp.next.prev = temp;
+
+		size--;
+
 	}
 
 	public void remove() {
@@ -116,7 +122,7 @@ public class TestMain {
 		list.addLast(1111);
 
 		list.printAll();
-		list.remove(0);
+		list.remove();
 		list.printAll();
 
 	}
