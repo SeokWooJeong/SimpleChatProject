@@ -13,7 +13,7 @@ class ChattingClient {
 	Controller controller;
 	public ChattingClient(String name, String ip, int socket, Controller controller) {
 		
-		nameCheck(name);
+	
 		this.ip = ip;
 		this.socket = socket;
 		this.controller = controller;
@@ -32,16 +32,7 @@ class ChattingClient {
 		}
 	}
 
-	public void nameCheck(String name) {
-		if (name == "") {
-			System.out.println("대화명을 입력하세요");
-			System.out.println("ex)java Main aaa");
-			System.exit(0);
-		} else {
-			this.name = name;
-		}
-	}
-	
+
 	public void sendLog(String log) {
 		clientSender.run(log);
 	}
