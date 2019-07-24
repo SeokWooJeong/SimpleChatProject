@@ -1,4 +1,4 @@
-package myLinkedList.EunWo;
+package myLinkedList.EunWoo;
 
 public class TestMain {
 

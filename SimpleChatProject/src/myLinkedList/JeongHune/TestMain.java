@@ -1,4 +1,4 @@
-package myLinkedList.JeongHun;
+package myLinkedList.JeongHune;
 
 class MyLinkedList {
 	private Node head = null;
