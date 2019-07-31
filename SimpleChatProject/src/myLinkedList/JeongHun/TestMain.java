@@ -1,10 +1,17 @@
 package myLinkedList.JeongHun;
 
-class MyLinkedList {
-	private Node head = null;
-	private Node tail = null;
-	private int size = 0;
+import java.util.LinkedList;
 
+class MyLinkedList {
+	private Node head;
+	private Node tail;
+	public int size;
+	
+	public MyLinkedList(){
+		head = null;
+		tail = null;
+		size = 0;
+	}
 	private class Node {
 		private int data;
 		private Node next;
@@ -23,9 +30,10 @@ class MyLinkedList {
 		if (head != null)
 			head.prev = newNode;
 		head = newNode;
-		size++;
+		
 		if (head.next == null)
 			tail = newNode;
+		size++;
 	}
 
 	public void addLast(int data) {
@@ -34,9 +42,10 @@ class MyLinkedList {
 		if (tail != null)
 			tail.next = newNode;
 		tail = newNode;
-		size++;
+		
 		if (tail.prev == null)
 			head = newNode;
+		size++;
 	}
 
 	public void add(int data) {
@@ -47,26 +56,27 @@ class MyLinkedList {
 		head = head.next;
 		if (head != null)
 			head.prev = null;
-		// size--;
+		size--;
 	}
 
 	public void removeLast() {
 		tail = tail.prev;
-		tail.next = null;
-		// size--;
+		if (tail != null)
+			tail.next = null;
+		size--;
 	}
 
 	public void remove(int index) {
-		if (index == 0)
+		if (index == 0) 
 			removeFrist();
-		if (index == size)
+		else if (index == size-1) 
 			removeLast();
-
-		Node temp = node(index - 1);
-		temp.next.prev = temp;
-
-		size--;
-
+		else {
+			Node temp = node(index-1);
+			temp.next = temp.next.next;
+			temp.next.prev = temp;
+			size--;
+		}
 	}
 
 	public void remove() {
@@ -83,7 +93,7 @@ class MyLinkedList {
 
 	Node node(int index) {
 		if (index > size - 1) {
-			System.out.println("에러");
+			System.out.println("index값이 size를 초과했습니다.");
 			throw new NullPointerException();
 		} else if (index < size / 2) {
 			Node x = head;
@@ -96,7 +106,6 @@ class MyLinkedList {
 				x = x.prev;
 			return x;
 		}
-
 	}
 
 	public void printAll() {
@@ -113,17 +122,10 @@ class MyLinkedList {
 public class TestMain {
 
 	public static void main(String[] args) {
-		MyLinkedList list = new MyLinkedList();
-		list.addFirst(3);
-		list.add(55);
-		list.add(66);
-		list.add(77);
-		list.add(88);
-		list.addLast(1111);
-
-		list.printAll();
-		list.remove();
-		list.printAll();
-
+//		MyLinkedList list = new MyLinkedList();
+//		list.removeLast();
+//		System.out.println(list.size);
+		LinkedList test = new LinkedList();
+		System.out.println(test.getClass());
 	}
 }

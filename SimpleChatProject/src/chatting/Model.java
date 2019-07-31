@@ -3,7 +3,7 @@ package chatting;
 public class Model {
 
 	private String NickName;
-	private int port = 3100;
+	private int port = 2300;
 	private String IpAdress = "218.39.221.86";
 
 	public String getNickName() {
